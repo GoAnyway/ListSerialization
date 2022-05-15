@@ -1,4 +1,4 @@
-﻿namespace ListSerializationCore
+﻿namespace ListSerialization.Core
 {
     public class ListNode
     {

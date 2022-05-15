@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0047C79B-26FC-4BF3-924D-DBFEE9E4F7C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListSerializationCore", "src\ListSerializationCore\ListSerializationCore.csproj", "{0D44F975-2B72-44DE-9715-4152185E2AA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListSerialization.Core", "src\ListSerializationCore\ListSerialization.Core.csproj", "{0D44F975-2B72-44DE-9715-4152185E2AA5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListSerializationConsole", "src\ListSerializationConsole\ListSerializationConsole.csproj", "{DCA7BEEF-857A-4655-A4F5-D92431A2D522}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListSerialization.Console", "src\ListSerializationConsole\ListSerialization.Console.csproj", "{DCA7BEEF-857A-4655-A4F5-D92431A2D522}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

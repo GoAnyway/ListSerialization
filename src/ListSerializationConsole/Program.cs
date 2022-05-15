@@ -1,8 +1,7 @@
-﻿using System;
-using System.IO;
-using ListSerializationCore;
+﻿using System.IO;
+using ListSerialization.Core;
 
-namespace ListSerialization
+namespace ListSerialization.Console
 {
     internal class Program
     {
@@ -55,16 +54,16 @@ namespace ListSerialization
 
         private static void ShowList(ListRandom list)
         {
-            Console.WriteLine("Showing list");
+            System.Console.WriteLine("Showing list");
 
             var elem = list.Head;
             while (elem != null)
             {
-                Console.WriteLine($"Data = {elem.Data}");
-                Console.WriteLine($"Prev = {elem.Previous?.Data ?? "NULL"}");
-                Console.WriteLine($"Next = {elem.Next?.Data ?? "NULL"}");
-                Console.WriteLine($"Random = {elem.Random?.Data ?? "NULL"}");
-                Console.WriteLine();
+                System.Console.WriteLine($"Data = {elem.Data}");
+                System.Console.WriteLine($"Prev = {elem.Previous?.Data ?? "NULL"}");
+                System.Console.WriteLine($"Next = {elem.Next?.Data ?? "NULL"}");
+                System.Console.WriteLine($"Random = {elem.Random?.Data ?? "NULL"}");
+                System.Console.WriteLine();
                 elem = elem.Next;
             }
         }
