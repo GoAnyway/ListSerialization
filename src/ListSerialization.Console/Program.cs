@@ -1,5 +1,5 @@
-﻿using System.IO;
-using ListSerialization.Core;
+﻿using ListSerialization.Core;
+using static System.Console;
 
 namespace ListSerialization.Console
 {
@@ -39,12 +39,12 @@ namespace ListSerialization.Console
 
             ShowList(list);
 
-            using (var stream = new FileStream("test.dat", FileMode.Create))
+            using (var stream = File.Open("test.dat", FileMode.OpenOrCreate))
             {
                 list.Serialize(stream);
             }
 
-            using (var stream = new FileStream("test.dat", FileMode.Open))
+            using (var stream = File.OpenRead("test.dat"))
             {
                 list.Deserialize(stream);
             }
@@ -54,17 +54,17 @@ namespace ListSerialization.Console
 
         private static void ShowList(ListRandom list)
         {
-            System.Console.WriteLine("Showing list");
+            WriteLine("Showing list");
 
-            var elem = list.Head;
-            while (elem != null)
+            var current = list.Head;
+            while (current is not null)
             {
-                System.Console.WriteLine($"Data = {elem.Data}");
-                System.Console.WriteLine($"Prev = {elem.Previous?.Data ?? "NULL"}");
-                System.Console.WriteLine($"Next = {elem.Next?.Data ?? "NULL"}");
-                System.Console.WriteLine($"Random = {elem.Random?.Data ?? "NULL"}");
-                System.Console.WriteLine();
-                elem = elem.Next;
+                WriteLine($"Data = {current.Data}");
+                WriteLine($"Prev = {current.Previous?.Data ?? "NULL"}");
+                WriteLine($"Next = {current.Next?.Data ?? "NULL"}");
+                WriteLine($"Random = {current.Random?.Data ?? "NULL"}");
+                WriteLine();
+                current = current.Next;
             }
         }
     }

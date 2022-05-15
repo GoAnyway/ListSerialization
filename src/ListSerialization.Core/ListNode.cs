@@ -1,10 +1,9 @@
-﻿namespace ListSerialization.Core
+﻿namespace ListSerialization.Core;
+
+public class ListNode
 {
-    public class ListNode
-    {
-        public ListNode Previous;
-        public ListNode Next;
-        public ListNode Random;
-        public string Data;
-    }
+    public string Data;
+    public ListNode Next;
+    public ListNode Previous;
+    public ListNode Random;
 }

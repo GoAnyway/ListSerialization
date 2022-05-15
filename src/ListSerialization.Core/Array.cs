@@ -2,7 +2,7 @@
 
 namespace ListSerialization.Core;
 
-public readonly ref struct Array<T>
+internal readonly ref struct Array<T>
 {
     private readonly T[] _array;
     private readonly bool _rented;
@@ -28,6 +28,7 @@ public readonly ref struct Array<T>
 
     public static implicit operator T[](Array<T> array) =>
         array._array ?? throw new InvalidOperationException();
+
     public static implicit operator Span<T>(Array<T> array) => array.Span;
     public static implicit operator ReadOnlySpan<T>(Array<T> array) => array.Span;
 
