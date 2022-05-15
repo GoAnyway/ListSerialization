@@ -40,17 +40,17 @@ internal readonly ref struct Array<T>
 
     public T this[int i]
     {
-        get => i < Size
+        get => IsInRange(i)
             ? Span[i]
             : throw new ArgumentOutOfRangeException(nameof(i));
-        set => Span[i] = i < Size
+        set => Span[i] = IsInRange(i)
             ? value
             : throw new ArgumentOutOfRangeException(nameof(i));
     }
 
     public Span<T> this[Range range] =>
-        range.Start.Value >= 0 &&
-        range.End.Value <= Size
-            ? Span[range]
-            : throw new ArgumentOutOfRangeException(nameof(range));
+        Span[range];
+
+    private bool IsInRange(int index) =>
+        index >= 0 && index < Size;
 }
