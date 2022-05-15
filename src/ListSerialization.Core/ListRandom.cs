@@ -109,6 +109,6 @@ namespace ListSerialization.Core
             }
         }
 
-        private record Node(ListNode ListNode, int Random);
+        private record struct Node(ListNode ListNode, int Random);
     }
 }
