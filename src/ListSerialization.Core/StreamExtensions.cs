@@ -15,15 +15,11 @@ internal static class StreamExtensions
 
     public static string ReadString(this Stream stream)
     {
-        const int stackallocThreshold = 1024;
         var size = stream.ReadInt();
-
-        using var buffer = size <= stackallocThreshold
+        using var buffer = size <= 1024
             ? new Array<byte>(stackalloc byte[size])
             : new(size);
-        var _ = size <= stackallocThreshold
-            ? stream.Read(buffer)
-            : stream.Read(buffer, 0, size);
+        var _ = stream.Read(buffer);
 
         var chars = MemoryMarshal.Cast<byte, char>(buffer);
         return new(chars);
