@@ -55,7 +55,7 @@ public class ListRandom
 
         public void Serialize()
         {
-            _stream.Write(BitConverter.GetBytes(_list.Count));
+            _stream.Write(_list.Count);
 
             var nodes = new Dictionary<ListNode, int>(_list.Count);
             var idx = 0;
