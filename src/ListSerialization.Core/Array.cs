@@ -38,19 +38,12 @@ internal readonly ref struct Array<T>
         ArrayPool<T>.Shared.Return(_array);
     }
 
-    public T this[int i]
+    public T this[int index]
     {
-        get => IsInRange(i)
-            ? Span[i]
-            : throw new ArgumentOutOfRangeException(nameof(i));
-        set => Span[i] = IsInRange(i)
-            ? value
-            : throw new ArgumentOutOfRangeException(nameof(i));
+        get => Span[index];
+        set => Span[index] = value;
     }
 
     public Span<T> this[Range range] =>
         Span[range];
-
-    private bool IsInRange(int index) =>
-        index >= 0 && index < Size;
 }
